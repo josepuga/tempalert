@@ -1,0 +1,12 @@
+// Compile with: protoc --go_out=. --go-grpc_out=. --proto_path=./proto ./proto/temperatures.proto
+
+syntax = "proto3";
+package temperatures;
+
+option go_package = "./proto/temperatures";
+
+message SensorAlert {
+    int32 sensor_id = 1;
+    int32 temperature = 2;
+    string timestamp =3;
+}

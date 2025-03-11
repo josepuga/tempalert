@@ -1,0 +1,11 @@
+// Compile with: protoc --prost_out=src/ --proto_path=proto proto/temperatures.proto
+// protoc-gen-prost must be installed
+
+syntax = "proto3";
+package temperatures;
+
+message SensorAlert {
+    int32 sensor_id = 1;
+    int32 temperature = 2;
+    string timestamp =3;
+}
