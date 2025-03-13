@@ -48,11 +48,10 @@ async fn main() {
         match result {
             Ok(message) => {
                 if let Some(payload) = message.payload() {
-                    // Deserializa the message
+                    // Deserialize message
                     match SensorAlert::decode(payload) {
 
                         Ok(alert) => {
-                            // More "polite" time format.
                             println!("Alert: Sensor {:>2}. Temp {:>4} @ {}",
                             alert.sensor_id, alert.temperature, alert.timestamp);}
                         Err(e) => {println!("Error unserializing alert: {}", e);}
